@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="./front/src/assets/logo.png" width="200px" alt="logo">
+  <img src="./api/public/logo-hn-search.webp" width="200px" alt="logo">
   <h1>Hacker News Full Stack Developer Test</h1>
 </div>
 
 <p align="center">
-  Hacker News Full Stack Developer Test é um projeto de teste, onde o back-end em Laravel realiza a integração com a API do [Hacker News](https://github.com/HackerNews/API), que por sua vez é consumida com o front-end realizado em Vue.js.
+  Hacker News Full Stack Developer Test é um projeto de teste, onde o back-end em Laravel realiza a integração com a API do[Hacker News, que por sua vez é consumida com o front-end realizado em Vue.js.
 </p>
 
 ## Funcionalidades
