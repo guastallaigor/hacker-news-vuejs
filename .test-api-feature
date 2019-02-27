@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ ! -z "$1" ]; then
+	if [ ! -z "$2" ]; then
+		docker-compose exec php ./vendor/bin/phpunit ./tests/Feature/$1 --filter=$2 --coverage-clover text -c ./phpunit.xml
+	else
+		docker-compose exec php ./vendor/bin/phpunit ./tests/Feature/$1 --coverage-clover text -c ./phpunit.xml
+	fi
+else
+	docker-compose exec php ./vendor/bin/phpunit ./tests/Feature --coverage-clover text -c ./phpunit.xml
+fi

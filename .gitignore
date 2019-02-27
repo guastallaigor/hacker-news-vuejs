@@ -1,0 +1,41 @@
+.DS_Store
+node_modules
+/front/dist
+
+# local env files
+api/.env
+.config-jira
+.env.local
+.env.*.local
+\.env\.js
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# Locks
+package-lock.json
+yarn.lock
+
+# Dist
+dist
+dist.zip
+/index.html
+api/public/.coverage
+/text
+/api/bootstrap/cache
+api/storage/logs/
+api/text
+api/nohup\.out
+
+api/tests/_reports/logs/clover\.xml

@@ -1,0 +1,17 @@
+version: "2"
+volumes:
+  issj-postgres-data:
+    driver: local
+networks:
+  issj:
+services:  
+  php:    
+    image: docker.sabium.com.br/web/apache-php:1.0
+    container_name: issj-php
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8083:80"
+    networks:
+      - issj  
+    tty: true

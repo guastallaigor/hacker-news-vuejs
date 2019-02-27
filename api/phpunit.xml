@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <logging>
+        <log type="coverage-clover" target="tests/_reports/logs/clover.xml"/>
+        <log type="coverage-html" target="public/.coverage" lowUpperBound="35" highLowerBound="70" />
+     </logging>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app/Http/Models</directory>
+            <directory suffix=".php">./app/Http/Repositories</directory>
+            <directory suffix=".php">./app/Http/Controllers</directory>
+            <directory suffix=".php">./app/Http/Requests</directory>
+            <exclude>
+                <directory>./app/Console/*</directory>
+                <directory>./app/Events/*</directory>
+                <directory>./app/Exceptions/*</directory>
+                <directory>./app/Http/Middleware/*</directory>
+                <directory prefix="Kernel">./app/Http</directory>
+                <directory>./app/Http/Controllers/Auth</directory>
+                <directory>./app/Providers/*</directory>
+                <directory>./app/bootstrap/*</directory>
+                <directory>./app/config/*</directory>
+                <directory>./app/database/*</directory>
+                <directory>./app/public/*</directory>
+                <directory>./app/routes/*</directory>
+                <directory>./app/resources/*</directory>
+                <directory>./app/storage/*</directory>
+                <directory>./app/vendor/*</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <php>
+        <server name="APP_ENV" value="testing"/>
+        <server name="BCRYPT_ROUNDS" value="4"/>
+        <server name="CACHE_DRIVER" value="array"/>
+        <server name="MAIL_DRIVER" value="array"/>
+        <server name="QUEUE_CONNECTION" value="sync"/>
+        <server name="SESSION_DRIVER" value="array"/>
+    </php>
+</phpunit>
