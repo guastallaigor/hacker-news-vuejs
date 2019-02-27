@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  Hacker News Full Stack Developer Test é um projeto de teste, onde o back-end em Laravel realiza a integração com a API do [HackerNews](https://github.com/HackerNews/API), que por sua vez é consumida com o front-end realizado em Vue.js.
+  Hacker News Full Stack Developer Test é um projeto de teste, onde o back-end em Laravel realiza a integração com a API do [Hacker News](https://github.com/HackerNews/API), que por sua vez é consumida com o front-end realizado em Vue.js.
 </p>
 
 ## Funcionalidades
@@ -41,6 +41,7 @@ Todo o front-end está na pasta `front`
 Deve ser criado um `.env.js` a partir do `.env.example.js` que está na raíz da pasta
 
 Se você não tiver `Node v8.11.0+` instalado em sua máquina, execute os comandos abaixo:
+
 ---------------------------------------------------------------------------------------
 Execute `docker-compose up -d` para subir os containers (`php/vue`)
 
@@ -51,10 +52,13 @@ Dentro da pasta front (`cd front`) execute `npm install`
 Para sair do container execute `exit`
 
 Execute `docker-compose down && docker-compose up -d` para reiniciar o servidor
+
 ---------------------------------------------------------------------------------------
+
 Se você tiver `Node v8.11.0+` instalado em sua máquina, execute os comandos abaixo:
 
 Dentro da pasta front (`cd front`) execute `npm install`
+
 ---------------------------------------------------------------------------------------
 
 Por padrão o front-end é executado na porta `8080`
@@ -66,7 +70,9 @@ Todo o back-end está na pasta `api` na raíz
 Deve ser criado um `.env` a partir do `.env.example` na raíz da pasta
 
 Se você não tiver `Composer` instalado em sua máquina, execute os comandos abaixo:
+
 ---------------------------------------------------------------------------------------
+
 Execute `docker-compose up -d` para subir os containers (`php/vue`)
 
 Execute `docker-compose exec php bash` para entrar dentro do container do php
@@ -76,11 +82,15 @@ Execute `composer install`
 Para sair do container execute `exit`
 
 Execute `docker-compose down && docker-compose up -d` para reiniciar o servidor
+
 ---------------------------------------------------------------------------------------
+
 Se você não tiver `Composer` instalado em sua máquina, execute os comandos abaixo:
 
 Dentro da pasta api (`cd api`) execute `composer install`
+
 ---------------------------------------------------------------------------------------
+
 Por padrão ele é executado na porta `80`
 
 Para acessar diretamente o back-end, acesse `localhost/`
