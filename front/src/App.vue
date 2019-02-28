@@ -1,29 +1,41 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="app" id="app">
+    <transition name="slide" mode="in-out">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+  font-family: 'Lato';
+  padding: 1em;
+  background: linear-gradient(to left, #f46b45, #eea849)
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+* {
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0052cc;
+}
+
+::-webkit-scrollbar-track {
+  background: #c3c3c3;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
 }
 </style>

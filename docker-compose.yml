@@ -29,16 +29,3 @@ services:
     networks:
       - hiring
     tty: true
-  postgres:
-    image: postgres:10.3
-    container_name: hiring-postgres
-    networks:
-      - hiring
-    volumes:
-      - hiring-postgres-data:/var/lib/postgresql/data
-    ports:
-      - "5433:5432"
-    environment:
-      - POSTGRES_PASSWORD=hiring
-      - POSTGRES_DB=hiring
-      - POSTGRES_USER=hiring

@@ -136,10 +136,6 @@ Para gerar code coverage em modo texto no terminal, execute o comando dentro da 
 Para gerar code coverage em xml, execute o comando dentro da pasta api: `./vendor/bin/phpunit tests --coverage-clover text`
 Feito isto, abra: `http://localhost/.coverage/` para verificar a cobertura de testes
 
-Pode ser executado diretamente dentro do docker utilizando o arquivo `./.test-api-feature` que se encontra na raíz do projeto, onde pode ser passado parâmetros também, onde o primeiro parâmetro é o arquivo e o segundo o método, ambos opcionais, ex: `./.test-api-feature HackerNewsControllerTest testGetNewStoriesPaginatedFromTheFirstPage`
-
-Troque para `Unit` se for uma classe que possua teste unitário onde está `Feature`
-
 ### Front-end
 
 #### Cypress (E2E)
