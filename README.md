@@ -15,7 +15,6 @@
 * Vuex
 * Vue-Router
 * SASS
-* Vuejs-Paginate
 * Axios
 * Cypress
 
@@ -105,6 +104,11 @@ Para executar o code sniffer basta rodar o comando dentro da pasta `api`: `./ven
 
 Rota | Descrição
 --- | ---
+/ | Menu
+/top-stories | Top Stories do Hacker News
+/best-stories | Best Stories do Hacker News
+/new-stories | New Stories do Hacker News
+* | Página não encontrada
 
 ### Back-end
 
