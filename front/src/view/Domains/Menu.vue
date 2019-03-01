@@ -22,17 +22,17 @@ export default {
     cards: [
       {
         title: 'Top Stories',
-        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/Webp.net-resizeimage__2__rkFNogU8E.jpg',
+        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/a_By4PdzLLE.jpg',
         link: 'top-stories'
       },
       {
         title: 'Best Stories',
-        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/Webp.net-resizeimage__2__rkFNogU8E.jpg',
+        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/a_By4PdzLLE.jpg',
         link: 'best-stories'
       },
       {
         title: 'New Stories',
-        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/Webp.net-resizeimage__2__rkFNogU8E.jpg',
+        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/a_By4PdzLLE.jpg',
         link: 'new-stories'
       }
     ]
