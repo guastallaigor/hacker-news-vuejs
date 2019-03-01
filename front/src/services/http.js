@@ -7,17 +7,17 @@ const axiosService = axios.create({
 })
 
 axiosService.interceptors.request.use((config) => {
-  store.commit('setLoadingTrue')
+  store.commit('loading/setLoadingTrue')
 
   return config
 }, err => Promise.reject(err))
 
 axiosService.interceptors.response.use((success) => {
-  store.commit('setLoadingFalse')
+  store.commit('loading/setLoadingFalse')
 
   return success
 }, (err) => {
-  store.commit('setLoadingFalse')
+  store.commit('loading/setLoadingFalse')
 
   return Promise.reject(err)
 })

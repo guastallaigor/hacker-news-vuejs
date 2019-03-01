@@ -3,8 +3,9 @@
     <div class="layout align-center justify-center" id="cards">
       <Card
         v-for="(card, i) in cards" :key="i"
-        :title="card.title"
-        :url="card.url"
+        :card="card"
+        @click="openLink(card.link)"
+        :show-title="true"
       />
     </div>
   </div>
@@ -21,18 +22,26 @@ export default {
     cards: [
       {
         title: 'Top Stories',
-        url: 'https://images.all-free-download.com/images/graphiclarge/abstract_modern_design_vector_background_illustration_570122.jpg'
+        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/Webp.net-resizeimage__2__rkFNogU8E.jpg',
+        link: 'top-stories'
       },
       {
         title: 'Best Stories',
-        url: 'https://images.all-free-download.com/images/graphiclarge/abstract_modern_design_vector_background_illustration_570122.jpg'
+        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/Webp.net-resizeimage__2__rkFNogU8E.jpg',
+        link: 'best-stories'
       },
       {
         title: 'New Stories',
-        url: 'https://images.all-free-download.com/images/graphiclarge/abstract_modern_design_vector_background_illustration_570122.jpg'
+        url: 'https://ik.imagekit.io/6xhf1gnexgdgk/Webp.net-resizeimage__2__rkFNogU8E.jpg',
+        link: 'new-stories'
       }
     ]
-  })
+  }),
+  methods: {
+    openLink(name) {
+      this.$router.push({ name })
+    }
+  }
 }
 </script>
 

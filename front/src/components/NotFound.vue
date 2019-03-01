@@ -1,6 +1,6 @@
 <template functional>
   <div class="not-found">
-    <img class="format-img" src="@/assets/not-found.jpg" alt="404 Not found">
+    <img class="format-img" src="@/assets/not-found.jpg" alt="404 Not Found">
   </div>
 </template>
 

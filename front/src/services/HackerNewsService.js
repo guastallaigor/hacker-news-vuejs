@@ -3,7 +3,7 @@ import http from './http'
 class HackerNewsService {
   constructor () {
     this.topStories = 'top-stories'
-    this.baseStories = 'base-stories'
+    this.bestStories = 'best-stories'
     this.newStories = 'new-stories'
   }
 
@@ -11,8 +11,8 @@ class HackerNewsService {
     return http.get(this.topStories, { params })
   }
 
-  getBaseStories(params) {
-    return http.get(this.baseStories, { params })
+  getBestStories(params) {
+    return http.get(this.bestStories, { params })
   }
 
   getNewStories(params) {

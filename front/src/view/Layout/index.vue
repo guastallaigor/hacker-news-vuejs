@@ -1,29 +1,18 @@
 <template>
-  <div>
+  <div id="layout">
     <github-corner/>
-    <div>
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
+    <vue-progress-bar/>
   </div>
 </template>
 
 <script>
 import GithubCorner from '@/components/GithubCorner'
-import HackerNewsService from '@/services/HackerNewsService'
 
 export default {
   name: 'Layout',
   components: {
     GithubCorner
-  },
-  created() {
-    this.getTopStories()
-  },
-  methods: {
-    async getTopStories() {
-      const { data } = await HackerNewsService.getTopStories()
-      console.log(data)
-    }
   }
 }
 </script>
