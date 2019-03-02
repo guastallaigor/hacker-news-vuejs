@@ -105,7 +105,7 @@ class HackerNewsControllerTest extends TestCase
         // When we try to get one random user information of hacker news
         $response = $this->json('GET', $this->userEndpoint.'/prostoalex');
 
-        // It should return a paginated json the same as the baseJsonStructure
+        // It should return a valid user json with all the basic attributes filled
         $response
             ->assertStatus(200)
             ->assertJsonStructure([
