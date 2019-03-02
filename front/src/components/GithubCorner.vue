@@ -47,6 +47,10 @@
   position: fixed;
   right: $right;
   top: $top;
+
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
 }
 
 .github-corner {

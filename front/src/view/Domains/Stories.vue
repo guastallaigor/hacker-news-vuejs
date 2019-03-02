@@ -1,9 +1,5 @@
 <template >
   <div class="top-stories">
-    <div class="layout wrap-column mt-negative">
-      <h1 class="title">Hacker News</h1>
-      <h3 class="subtitle">{{ getName }}</h3>
-    </div>
     <div class="layout wrap-row align-center justify-center">
       <Card
         v-for="card in stories.data"
@@ -12,7 +8,7 @@
         :less-padding="true"
         @click="open(card)"
       >
-        <h2 class="card-title">{{ card.title | textSubstr(80) }}</h2>
+        <h2 class="card-title">{{ card.title | textSubstr(getSubstr) }}</h2>
         <p><strong>Posted:</strong>&nbsp;{{ card.time | formatTime }}
           &nbsp;|&nbsp;
           <strong>Score:</strong>&nbsp;{{ card.score }} points</p>
@@ -35,6 +31,13 @@ export default {
       const { name } = this.$route
 
       return `${name.charAt(0).toUpperCase()}${name.slice(1).replace('-', ' ')}`
+    },
+    getSubstr() {
+      if (window && window.innerWidth < 425) {
+        return 30
+      }
+
+      return 80
     }
   },
   created () {
@@ -97,11 +100,6 @@ export default {
 </script>
 
 <style lang="scss">
-@mixin titles () {
-  margin: 0 auto .2em auto;
-  color: #fff;
-}
-
 .top-stories {
   margin: 2% auto;
   text-shadow: 2px 2px 10px #000;
@@ -110,16 +108,8 @@ export default {
     text-shadow: 2px 2px 6px #000;
   }
 
-  .title {
-    font-size: 3em;
-  }
-
-  .title, .subtitle {
-    @include titles();
-  }
-
-  .mt-negative {
-    margin-top: -1.2em;
+  @media screen and (max-width: 425px) {
+    font-size: 1em;
   }
 }
 </style>

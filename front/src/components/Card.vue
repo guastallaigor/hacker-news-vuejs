@@ -35,6 +35,17 @@
     font-size: 3.9em;
   }
 
+  @media screen and (max-width: 425px) {
+    width: 300px;
+    margin: 1em;
+    font-size: 1em;
+    padding: 0em 1.5em;
+
+    > h1 {
+      font-size: 3.1em;
+    }
+  }
+
   &:hover {
     box-shadow: 0 0 15px rgba(0,0,0,.4),
       0 0 25px rgba(0,0,0,.2);

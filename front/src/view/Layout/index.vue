@@ -1,6 +1,10 @@
 <template>
   <div id="layout">
     <github-corner/>
+    <div class="layout wrap-column mt-negative has-title">
+      <h1 class="title">Hacker News</h1>
+      <h3 class="subtitle">{{ getName }}</h3>
+    </div>
     <router-view></router-view>
     <vue-progress-bar/>
     <button type="button" @click="$router.back()" class="go-back" v-if="$route.name !== 'menu'">
@@ -48,6 +52,31 @@ export default {
 
   &:hover {
     opacity: .75;
+  }
+}
+
+@mixin titles () {
+  margin: 0 auto .2em auto;
+  color: #fff;
+}
+
+.has-title {
+  text-shadow: 2px 2px 10px #000;
+
+  .title {
+    font-size: 3em;
+
+    @media screen and (max-width: 425px) {
+      font-size: 2.4em;
+    }
+  }
+
+  .title, .subtitle {
+    @include titles();
+  }
+
+  .mt-negative {
+    margin-top: -1.2em;
   }
 }
 </style>
