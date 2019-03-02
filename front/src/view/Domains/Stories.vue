@@ -94,7 +94,7 @@ export default {
 
 <style lang="scss">
 .top-stories {
-  margin: 2% auto;
+  margin: 0 auto;
   text-shadow: 2px 2px 10px #000;
 
   strong {
