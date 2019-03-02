@@ -27,11 +27,6 @@ export default {
   },
   computed: {
     ...mapState({ stories: state => state.allStories.stories }),
-    getName () {
-      const { name } = this.$route
-
-      return `${name.charAt(0).toUpperCase()}${name.slice(1).replace('-', ' ')}`
-    },
     getSubstr() {
       if (window && window.innerWidth < 425) {
         return 30

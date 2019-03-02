@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <div class="layout align-center justify-center wrap-row" id="cards">
+    <div class="layout justify-center wrap-row" id="cards">
       <Card
         v-for="(card, i) in cards"
         :key="i"
@@ -52,6 +52,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
 
   @media screen and (max-width: 425px) {
     top: 54%;

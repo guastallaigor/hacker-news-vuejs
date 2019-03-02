@@ -3,7 +3,7 @@
     <github-corner/>
     <div class="layout wrap-column mt-negative has-title">
       <h1 class="title">Hacker News</h1>
-      <h3 class="subtitle">{{ getName }}</h3>
+      <h3 class="subtitle" v-if="getName">{{ getName }}</h3>
     </div>
     <router-view></router-view>
     <vue-progress-bar/>
@@ -15,11 +15,23 @@
 
 <script>
 import GithubCorner from '@/components/GithubCorner'
+const routes = ['top-stories', 'best-stories', 'new-stories']
 
 export default {
   name: 'Layout',
   components: {
     GithubCorner
+  },
+  computed: {
+    getName () {
+      const { name } = this.$route
+
+      if (name && routes.includes(name)) {
+        return `${name.charAt(0).toUpperCase()}${name.slice(1).replace('-', ' ')}`
+      }
+
+      return ''
+    }
   }
 }
 </script>
