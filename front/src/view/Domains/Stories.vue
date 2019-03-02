@@ -1,6 +1,6 @@
 <template >
   <div class="top-stories">
-    <div class="layout wrap-column align-center justify-center mt-negative">
+    <div class="layout wrap-column mt-negative">
       <h1 class="title">Hacker News</h1>
       <h3 class="subtitle">{{ getName }}</h3>
     </div>
@@ -13,8 +13,10 @@
         @click="open(card)"
       >
         <h2 class="card-title">{{ card.title | textSubstr(80) }}</h2>
-        <p>{{ card.time | formatTime }}</p>
-        <p>Score: {{ card.score }} points | by: {{ card.by }}</p>
+        <p><strong>Posted:</strong>&nbsp;{{ card.time | formatTime }}
+          &nbsp;|&nbsp;
+          <strong>Score:</strong>&nbsp;{{ card.score }} points</p>
+        <p>by: {{ card.by | textSubstr(50) }}</p>
       </Card>
     </div>
   </div>
@@ -64,7 +66,7 @@ export default {
         ? `${time} ${minuteHourDay}`
         : `${time} ${minuteHourDay}s`
 
-      return `Time posted: ${minuteHourDay} ago`
+      return `${minuteHourDay} ago`
     }
   },
   methods: {
@@ -103,17 +105,21 @@ export default {
 .top-stories {
   margin: 2% auto;
   text-shadow: 2px 2px 10px #000;
-}
 
-.title {
-  font-size: 3em;
-}
+  strong {
+    text-shadow: 2px 2px 6px #000;
+  }
 
-.title, .subtitle {
-  @include titles();
-}
+  .title {
+    font-size: 3em;
+  }
 
-.mt-negative {
-  margin-top: -1.2em;
+  .title, .subtitle {
+    @include titles();
+  }
+
+  .mt-negative {
+    margin-top: -1.2em;
+  }
 }
 </style>

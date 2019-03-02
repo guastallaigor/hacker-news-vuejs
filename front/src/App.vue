@@ -17,17 +17,19 @@ body, html {
   font-weight: normal;
 }
 
-::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
-}
+@media screen and (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #eea849;
-}
+  ::-webkit-scrollbar-thumb {
+    background: #eea849;
+  }
 
-::-webkit-scrollbar-track {
-  background: #c3c3c3;
+  ::-webkit-scrollbar-track {
+    background: #c3c3c3;
+  }
 }
 
 .app {

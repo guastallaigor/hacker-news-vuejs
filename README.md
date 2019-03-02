@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./api/public/logo-hn-search.webp" width="200px" alt="logo">
+  <img src="./api/public/logo.webp" width="200px" alt="logo">
   <h1>Hacker News Full Stack Developer Test</h1>
 </div>
 
