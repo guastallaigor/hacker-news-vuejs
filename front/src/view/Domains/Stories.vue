@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState, mapMutations } from 'vuex'
 import RotateSquare2 from '@/components/RotateSquare2'
 
 export default {
@@ -31,15 +31,17 @@ export default {
     RotateSquare2
   },
   data: () => ({
-    page: 1,
-    first: false,
-    scrollY: 0
+    page: 1
   }),
-  created() {
-    this.first = true
+  created () {
+    this.clear()
+    const { query } = this.$route
+    this.page = query && query.page && !isNaN(query.page)
+      ? parseInt(query.page, 10)
+      : 1
     this.getStories()
   },
-  mounted() {
+  mounted () {
     this.scroll()
   },
   computed: {
@@ -91,21 +93,30 @@ export default {
     }
   },
   methods: {
+    ...mapMutations('allStories', ['clear']),
     ...mapActions('allStories', [
       'getTopStories',
       'getBestStories',
       'getNewStories'
     ]),
     async getStories () {
-      const { page, stories } = this
+      const { page } = this
       const query = { page }
       const { name } = this.$route
+      const routes = ['top-stories', 'best-stories', 'new-stories']
+      if (!routes.includes(name)) return
 
-      name === 'top-stories'
-        ? await this.getTopStories(query)
-        : name === 'best-stories'
-          ? await this.getBestStories(query)
-          : await this.getNewStories(query)
+      switch (name) {
+        case 'top-stories':
+          await this.getTopStories(query)
+          break
+        case 'best-stories':
+          await this.getBestStories(query)
+          break
+        case 'new-stories':
+          await this.getNewStories(query)
+          break
+      }
 
       this.$router.push({ query })
     },
@@ -114,18 +125,12 @@ export default {
         const scrollPos = document.documentElement.scrollTop || document.body.scrollTop
         const offset = document.documentElement.offsetHeight || document.body.offsetHeight
 
-         if ((window.innerHeight + scrollPos) >= (offset - 50)) {
-           this.paginate()
-         }
-       }
+        if ((window.innerHeight + scrollPos) >= (offset - 50)) {
+          this.paginate()
+        }
+      }
     },
     paginate () {
-      if (this.first) {
-        this.first = false
-
-        return
-      }
-
       if (this.loading) return
 
       this.page += 1

@@ -1,5 +1,3 @@
-import app from '../main'
-
 const state = {
   loading: false
 }
