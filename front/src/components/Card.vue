@@ -2,6 +2,7 @@
   <div
     class="card"
     :style="props.card && props.card.url ? `background-image: url(${props.card.url})` : ''"
+    :class="{'less-padding': props.lessPadding}"
     v-on="listeners"
   >
     <h1 class="text-shadow" v-if="props.showTitle">{{ props.card.title }}</h1>
@@ -17,6 +18,7 @@
   cursor: pointer;
   background-size: cover;
   border-radius: 10px;
+  box-sizing: border-box;
   background-position: center;
   background-color: transparent;
   color: white;
@@ -38,6 +40,10 @@
       0 0 25px rgba(0,0,0,.2);
     top: -5px;
   }
+}
+
+.less-padding {
+  padding: 0 1.3em !important;
 }
 
 .text-shadow {

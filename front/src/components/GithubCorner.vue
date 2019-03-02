@@ -1,10 +1,11 @@
 <template functional>
-  <div class="main-gh-icon" id="main-gh-icon">
+  <div id="main-gh-icon">
     <a
       href="https://github.com/guastallaigor/hiring"
       class="github-corner"
       target="_blank"
       aria-label="View source on GitHub"
+      rel="noopener"
     >
       <svg
         width="80"
@@ -27,31 +28,55 @@
         ></path>
       </svg>
     </a>
+    <div class="is-me">
+      <a
+        href="https://github.com/guastallaigor"
+        class="guastallaigor"
+        target="_blank"
+        aria-label="@guastallaigor Profile"
+        rel="noopener"
+      >
+      @guastallaigor
+    </a>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-.github-corner {
+@mixin is-fixed ($top: 0px, $right: 0px) {
   position: fixed;
-  right: 0px;
-  top: 0px;
+  right: $right;
+  top: $top;
+}
 
+.github-corner {
+  @include is-fixed();
   &:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
   }
-}
 
-.main-gh-icon {
-  align-self: flex-start;
-}
+  @media screen and (max-width: 500px) {
+    &.octo-arm {
+      animation: octocat-wave 560ms ease-in-out;
+    }
 
-@media screen and (max-width: 500px) {
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
+    &:hover .octo-arm {
+      animation: none;
+    }
   }
+}
 
-  .github-corner:hover .octo-arm {
-    animation: none;
+.is-me {
+  @include is-fixed(40px, 5px);
+  transform: skew(-45deg, 45deg);
+  > .guastallaigor {
+    font-size: .9em;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

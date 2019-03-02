@@ -2,7 +2,8 @@
   <div class="menu">
     <div class="layout align-center justify-center" id="cards">
       <Card
-        v-for="(card, i) in cards" :key="i"
+        v-for="(card, i) in cards"
+        :key="i"
         :card="card"
         @click="openLink(card.link)"
         :show-title="true"

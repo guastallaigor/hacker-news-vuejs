@@ -1,18 +1,15 @@
 <template>
   <div class="app" id="app">
-    <transition name="slide" mode="in-out">
-      <router-view/>
-    </transition>
+    <router-view/>
   </div>
 </template>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-body {
+body, html {
   font-family: 'Lato';
-  padding: 1em;
-  background: linear-gradient(to left, #f46b45, #eea849)
+  background: linear-gradient(to left, #f46b45, #eea849);
 }
 
 * {
@@ -26,7 +23,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0052cc;
+  background: #eea849;
 }
 
 ::-webkit-scrollbar-track {
@@ -34,8 +31,8 @@ body {
 }
 
 .app {
-  height: 100%;
-  width: 100%;
+  height: inherit;
+  width: inherit;
   scroll-behavior: smooth;
 }
 </style>
