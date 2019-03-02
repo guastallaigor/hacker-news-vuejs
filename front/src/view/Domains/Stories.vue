@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     ...mapState({ stories: state => state.allStories.stories }),
-    getSubstr() {
+    getSubstr () {
       if (window && window.innerWidth < 425) {
         return 30
       }
@@ -48,15 +48,15 @@ export default {
         case calc < 3600:
           divider = 60
           minuteHourDay = 'minute'
-          break;
+          break
         case calc < 86400:
           divider = 3600
           minuteHourDay = 'hour'
-          break;
+          break
         default:
           divider = 86400
           minuteHourDay = 'day'
-          break;
+          break
       }
 
       const time = Math.floor(calc / divider)
@@ -68,7 +68,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions ('allStories', [
+    ...mapActions('allStories', [
       'getTopStories',
       'getBestStories',
       'getNewStories'
@@ -84,8 +84,6 @@ export default {
     open (card) {
       if (card && card.url) {
         window.open(card.url, 'toolbar=no,menubar=no,scrollbars=no,location=no,status=no', 'noopener')
-
-        return
       }
 
       // this.$router.push(`/story/${card.id}`)

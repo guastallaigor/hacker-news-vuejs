@@ -9,21 +9,21 @@ const getters = {
 }
 
 const actions = {
-  async getTopStories({ commit }) {
+  async getTopStories ({ commit }) {
     commit('clear')
     const { data } = await HackerNewsService.getTopStories()
     commit('setStories', data)
 
     return data
   },
-  async getBestStories({ commit }) {
+  async getBestStories ({ commit }) {
     commit('clear')
     const { data } = await HackerNewsService.getBestStories()
     commit('setStories', data)
 
     return data
   },
-  async getNewStories({ commit }) {
+  async getNewStories ({ commit }) {
     commit('clear')
     const { data } = await HackerNewsService.getNewStories()
     commit('setStories', data)
@@ -33,10 +33,10 @@ const actions = {
 }
 
 const mutations = {
-  clear(state) {
+  clear (state) {
     state.stories = []
   },
-  setStories(state, stories) {
+  setStories (state, stories) {
     state.stories = stories
   }
 }

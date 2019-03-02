@@ -1,4 +1,4 @@
-export default function textSubstr(value, qtd = 33, mask = '...') {
+export default function textSubstr (value, qtd = 33, mask = '...') {
   if (!value) return ''
 
   return value.length > qtd

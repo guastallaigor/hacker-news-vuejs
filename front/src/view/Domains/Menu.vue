@@ -39,7 +39,7 @@ export default {
     ]
   }),
   methods: {
-    openLink(name) {
+    openLink (name) {
       this.$router.push({ name })
     }
   }

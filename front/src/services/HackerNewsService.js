@@ -7,15 +7,15 @@ class HackerNewsService {
     this.newStories = 'new-stories'
   }
 
-  getTopStories(params) {
+  getTopStories (params) {
     return http.get(this.topStories, { params })
   }
 
-  getBestStories(params) {
+  getBestStories (params) {
     return http.get(this.bestStories, { params })
   }
 
-  getNewStories(params) {
+  getNewStories (params) {
     return http.get(this.newStories, { params })
   }
 }

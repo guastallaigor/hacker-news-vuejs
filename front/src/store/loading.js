@@ -11,11 +11,11 @@ const getters = {
 const actions = {}
 
 const mutations = {
-  setLoadingFalse(state) {
+  setLoadingFalse (state) {
     state.loading = false
     app.$Progress.finish()
   },
-  setLoadingTrue(state) {
+  setLoadingTrue (state) {
     state.loading = true
     app.$Progress.start()
   }
