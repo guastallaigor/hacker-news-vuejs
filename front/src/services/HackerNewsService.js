@@ -5,6 +5,7 @@ class HackerNewsService {
     this.topStories = 'top-stories'
     this.bestStories = 'best-stories'
     this.newStories = 'new-stories'
+    this.user = 'user'
   }
 
   getTopStories (params) {
@@ -17,6 +18,10 @@ class HackerNewsService {
 
   getNewStories (params) {
     return http.get(this.newStories, { params })
+  }
+
+  getUser (id) {
+    return http.get(`${this.user}/${id}`)
   }
 }
 

@@ -8,7 +8,7 @@
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
-    <button type="button" @click="$router.replace('/')" class="go-back" v-if="$route.name !== 'menu'">
+    <button type="button" @click="goToRoute" class="go-back" v-if="$route.name !== 'menu'">
       <img :src="require('@/assets/arrow.svg')" alt="Arrow left fab button">
     </button>
   </div>
@@ -33,6 +33,19 @@ export default {
 
       return ''
     }
+  },
+  methods: {
+    goToRoute () {
+      const { name } = this.$route
+
+      if (name && name.includes('user')) {
+        this.$router.back()
+
+        return
+      }
+
+      this.$router.replace('/')
+    }
   }
 }
 </script>
@@ -52,7 +65,7 @@ export default {
   padding: 14px;
   background-color: #eea849;
   position: fixed;
-  right: 15px;
+  right: 8px;
   border: 0;
   bottom: 15px;
   overflow: hidden;

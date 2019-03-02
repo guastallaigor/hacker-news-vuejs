@@ -24,6 +24,12 @@ const children = [
     path: '/new-stories',
     name: 'new-stories',
     component: () => import('@/view/Domains/Stories')
+  },
+  {
+    path: '/user/:id',
+    name: 'user',
+    props: true,
+    component: () => import('@/view/Domains/User')
   }
 ]
 

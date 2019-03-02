@@ -20,5 +20,6 @@ Route::middleware(['api'])->group(function () {
         Route::get('top-stories', 'HackerNewsController@getTopStories');
         Route::get('new-stories', 'HackerNewsController@getNewStories');
         Route::get('best-stories', 'HackerNewsController@getBestStories');
+        Route::get('user/{id}', 'HackerNewsController@getUser');
     });
 });

@@ -41,7 +41,7 @@ const mutations = {
   }
 }
 
-const loading = {
+const allStories = {
   state,
   getters,
   actions,
@@ -49,4 +49,4 @@ const loading = {
   namespaced: true
 }
 
-export default loading
+export default allStories

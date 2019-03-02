@@ -59,6 +59,11 @@ class HackerNewsControllerTest extends TestCase
      */
     private $bestStoriesEndpoint = 'api/v1/best-stories';
 
+    /**
+     * @var string $userEndpoint
+     */
+    private $userEndpoint = 'api/v1/user';
+
     public function testGetTopStoriesPaginatedFromTheFirstPage()
     {
         // When we try to get all the top stories from the first page of hacker news
@@ -93,5 +98,25 @@ class HackerNewsControllerTest extends TestCase
             ->assertStatus(200)
             ->assertJsonStructure($this->baseJsonStructure)
             ->assertJsonFragment($this->baseJsonFragment);
+    }
+
+    public function testGetOneUserInformation()
+    {
+        // When we try to get one random user information of hacker news
+        $response = $this->json('GET', $this->userEndpoint.'/prostoalex');
+
+        // It should return a paginated json the same as the baseJsonStructure
+        $response
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'created',
+                'id',
+                'karma',
+                'submitted',
+                'about',
+            ])
+            ->assertJsonFragment([
+                'id' => 'prostoalex'
+            ]);
     }
 }

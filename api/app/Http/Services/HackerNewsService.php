@@ -36,6 +36,13 @@ class HackerNewsService extends RestService
         return $this->sendRequest($endpoint);
     }
 
+    public function getUser($id)
+    {
+        $endpoint = Endpoint::USER.'/'.$id.self::JSON;
+
+        return $this->sendRequest($endpoint);
+    }
+
     private function getStories(Request $request, $option)
     {
         $limit = $this->getLimit($request);

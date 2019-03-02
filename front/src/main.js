@@ -3,9 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
-import './assets/style/flex.scss'
+import './assets/style/main.scss'
+import formatTime from '@/filters/format-time'
 import textSubstr from '@/filters/text-substr'
 
+Vue.filter('formatTime', formatTime)
 Vue.filter('textSubstr', textSubstr)
 
 Vue.config.productionTip = false

@@ -1,18 +1,18 @@
 <template >
-  <div class="top-stories">
+  <div class="top-stories centered-div">
     <div class="layout wrap-row align-center justify-center">
       <Card
         v-for="(card, $index) in stories"
         :key="$index"
         :card="card"
         :less-padding="true"
-        @click="open(card)"
+        @click.prevent.stop="open(card)"
       >
         <h2 class="card-title">{{ card.title | textSubstr(getSubstr) }}</h2>
         <p><strong>Posted:</strong>&nbsp;{{ card.time | formatTime }}
           &nbsp;|&nbsp;
           <strong>Score:</strong>&nbsp;{{ card.score }} points</p>
-        <p>by: {{ card.by | textSubstr(50) }}</p>
+        <p @click.prevent.stop="goToUser(card.by)" class="user">by: {{ card.by | textSubstr(50) }}</p>
       </Card>
       <div class="loader layout justify-center" v-if="loading">
         <rotate-square2/>
@@ -63,35 +63,6 @@ export default {
       return requestData.total && (requestData.to !== requestData.total)
     }
   },
-  filters: {
-    formatTime (value) {
-      const calc = Date.now() / 1000 - Number(value)
-      let divider = 0
-      let minuteHourDay = ''
-
-      switch (calc) {
-        case calc < 3600:
-          divider = 60
-          minuteHourDay = 'minute'
-          break
-        case calc < 86400:
-          divider = 3600
-          minuteHourDay = 'hour'
-          break
-        default:
-          divider = 86400
-          minuteHourDay = 'day'
-          break
-      }
-
-      const time = Math.floor(calc / divider)
-      minuteHourDay = time === 1
-        ? `${time} ${minuteHourDay}`
-        : `${time} ${minuteHourDay}s`
-
-      return `${minuteHourDay} ago`
-    }
-  },
   methods: {
     ...mapMutations('allStories', ['clear']),
     ...mapActions('allStories', [
@@ -140,8 +111,9 @@ export default {
       if (card && card.url) {
         window.open(card.url, 'toolbar=no,menubar=no,scrollbars=no,location=no,status=no', 'noopener')
       }
-
-      // this.$router.push(`/story/${card.id}`)
+    },
+    goToUser (user) {
+      this.$router.push(`/user/${user}`)
     }
   }
 }
@@ -149,11 +121,6 @@ export default {
 
 <style lang="scss">
 .top-stories {
-  margin: 0 auto;
-  text-shadow: 2px 2px 10px #000;
-  width: 100%;
-  height: 100%;
-
   > .layout {
     width: inherit;
     height: inherit;
@@ -167,9 +134,8 @@ export default {
     font-size: 1em;
   }
 
-  .loader {
-    margin: 45px auto 10px auto;
-    width: 100%;
+  .user:hover {
+    text-decoration: underline;
   }
 }
 </style>

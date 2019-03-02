@@ -37,4 +37,12 @@ class HackerNewsController
 
         return response()->json($bestStories);
     }
+
+    public function getUser(Request $request, $id)
+    {
+        $user = $this->service
+            ->getUser($id);
+
+        return response()->json($user);
+    }
 }

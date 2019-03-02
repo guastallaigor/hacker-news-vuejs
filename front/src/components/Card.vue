@@ -2,7 +2,7 @@
   <div
     class="card"
     :style="props.card && props.card.url ? `background-image: url(${props.card.url})` : ''"
-    :class="{'less-padding': props.lessPadding}"
+    :class="{'less-padding': props.lessPadding, 'not-clickable': props.notClickable}"
     v-on="listeners"
   >
     <h1 class="text-shadow" v-if="props.showTitle">{{ props.card.title }}</h1>
@@ -55,6 +55,10 @@
 
 .less-padding {
   padding: 0 1.3em !important;
+}
+
+.not-clickable {
+  cursor: default !important;
 }
 
 .text-shadow {

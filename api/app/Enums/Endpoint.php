@@ -8,4 +8,5 @@ abstract class Endpoint
     const BEST_STORIES = 'beststories';
     const NEW_STORIES = 'newstories';
     const ITEM = 'item';
+    const USER = 'user';
 }
