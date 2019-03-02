@@ -110,6 +110,7 @@ Rota | Descrição
 /top-stories | Top Stories do Hacker News
 /best-stories | Best Stories do Hacker News
 /new-stories | New Stories do Hacker News
+/user/:id | Informações de um usuário do Hacker News
 * | Página não encontrada
 
 ### Back-end
@@ -119,6 +120,7 @@ Método | Rota | Descrição |
 GET | /top-stories | Paginação das Top Stories do Hacker News
 GET | /best-stories | Paginação das Best Stories do Hacker News
 GET | /new-stories | Paginação das New Stories do Hacker News
+GET | /user/:id | Informações de um usuário do Hacker News
 
 ## Testes
 
