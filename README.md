@@ -68,6 +68,8 @@ Todo o back-end está na pasta `api` na raíz
 
 Deve ser criado um `.env` a partir do `.env.example` na raíz da pasta
 
+Execute o comando `php artisan key:generate` para setar no `.env` a `APP_KEY`
+
 Se você **não possui** `Composer` instalado em sua máquina, execute os comandos abaixo:
 
 ---------------------------------------------------------------------------------------

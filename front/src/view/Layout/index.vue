@@ -5,7 +5,9 @@
       <h1 class="title">Hacker News</h1>
       <h3 class="subtitle" v-if="getName">{{ getName }}</h3>
     </div>
-    <router-view></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
     <button type="button" @click="$router.replace('/')" class="go-back" v-if="$route.name !== 'menu'">
       <img :src="require('@/assets/arrow.svg')" alt="Arrow left fab button">
     </button>
@@ -36,6 +38,14 @@ export default {
 </script>
 
 <style lang="scss">
+.fade-enter-active, .fade-leave-active {
+  transition: all .2s ease;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+
 .go-back {
   border-radius: 100px;
   z-index: 999;
