@@ -13,7 +13,7 @@
 <style lang="scss">
 .card {
   text-align: center;
-  margin: 2em;
+  margin: 1.8em;
   width: 400px;
   cursor: pointer;
   background-size: cover;

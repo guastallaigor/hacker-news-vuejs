@@ -50,10 +50,11 @@ class HackerNewsService extends RestService
             ->take($limit)
             ->map(function ($story) {
                 return $this->getItem($story);
-            });
+            })
+            ->toArray();
 
         $paginator = new LengthAwarePaginator(
-            $data,
+            array_values($data),
             sizeof($stories),
             $limit,
             $page

@@ -46,7 +46,11 @@ const router = new Router({
       ]
     }
   ],
-  scrollBehavior: () => ({ y: 0 })
+  scrollBehavior (to, from, savedPosition) {
+    if (to.name !== 'menu' && to.name !== 'not-found') {
+      return false
+    }
+  }
 })
 
 export default router

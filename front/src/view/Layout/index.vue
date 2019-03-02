@@ -6,7 +6,6 @@
       <h3 class="subtitle" v-if="getName">{{ getName }}</h3>
     </div>
     <router-view></router-view>
-    <vue-progress-bar/>
     <button type="button" @click="$router.back()" class="go-back" v-if="$route.name !== 'menu'">
       <img :src="require('@/assets/arrow.svg')" alt="Arrow left fab button">
     </button>

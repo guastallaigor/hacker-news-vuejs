@@ -4,7 +4,6 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import './assets/style/flex.scss'
-import VueProgressBar from 'vue-progressbar'
 import textSubstr from '@/filters/text-substr'
 
 const options = {
@@ -18,7 +17,6 @@ const options = {
   }
 }
 
-Vue.use(VueProgressBar, options)
 Vue.filter('textSubstr', textSubstr)
 
 Vue.config.productionTip = false

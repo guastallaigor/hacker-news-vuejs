@@ -13,11 +13,9 @@ const actions = {}
 const mutations = {
   setLoadingFalse (state) {
     state.loading = false
-    app.$Progress.finish()
   },
   setLoadingTrue (state) {
     state.loading = true
-    app.$Progress.start()
   }
 }
 
