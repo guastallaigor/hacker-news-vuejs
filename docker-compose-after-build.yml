@@ -1,0 +1,10 @@
+version: "2"
+services:
+  prod:
+    image: php:7.2-apache
+    container_name: prod
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - "80:80"
+    tty: true

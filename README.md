@@ -1,10 +1,10 @@
 <div align="center">
   <img src="./api/public/logo.webp" width="200px" alt="logo">
-  <h1>Hacker News Full Stack Developer Test</h1>
+  <h1>Hacker News Vue.js</h1>
 </div>
 
 <p align="center">
-  Hacker News Full Stack Developer Test é um projeto de teste, onde o back-end em Laravel realiza a integração com a API do Hacker News, que por sua vez é consumida com o front-end realizado em Vue.js.
+  Hacker News Vue.js é um projeto de teste, onde o back-end em Laravel realiza a integração com a API do Hacker News, que por sua vez é consumida com o front-end realizado em Vue.js.
 </p>
 
 ## Funcionalidades
@@ -17,6 +17,7 @@
 * SASS
 * Axios
 * Cypress
+* Jest
 
 ### Back-end
 
@@ -110,8 +111,8 @@ Rota | Descrição
 /top-stories | Top Stories do Hacker News
 /best-stories | Best Stories do Hacker News
 /new-stories | New Stories do Hacker News
-/user/:id | Informações de um usuário do Hacker News
-* | Página não encontrada
+/user/:id | Informações de um usuário do Hacker News (ao clicar sobre um nome do usuário dentro de um card)
+"*" | Página não encontrada
 
 ### Back-end
 
@@ -146,6 +147,12 @@ Feito isto, abra: `http://localhost/.coverage/` para verificar a cobertura de te
 
 ### Front-end
 
+### Jest
+
+Este projeto contém testes com Jest. Execute o comando `npm run test:unit`
+
+No momento, os testes cobrem todos os componentes da pasta `src/components`
+
 #### Cypress (E2E)
 
 Este projeto contém testes E2E (end-to-end) com o [Cypress](https://www.cypress.io/). Execute o comando `npm run test:e2e`
@@ -157,5 +164,3 @@ Será aberto a janela do Cypress, assim basta clicar no teste que deseja executa
 ### Front-end
 
 Para realizar a build do front-end local, execute o comando na raíz do projeto: `docker-compose run vue /bin/sh -c "cd front && npm run build"`
-
-Depois disso acesse `http://localhost`
