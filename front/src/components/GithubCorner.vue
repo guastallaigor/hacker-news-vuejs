@@ -1,7 +1,7 @@
 <template functional>
   <div id="main-gh-icon">
     <a
-      href="https://github.com/guastallaigor/hiring"
+      href="https://github.com/guastallaigor"
       class="github-corner"
       target="_blank"
       aria-label="View source on GitHub"
@@ -36,8 +36,8 @@
         aria-label="@guastallaigor Profile"
         rel="noopener"
       >
-      @guastallaigor
-    </a>
+        @guastallaigor
+      </a>
     </div>
   </div>
 </template>

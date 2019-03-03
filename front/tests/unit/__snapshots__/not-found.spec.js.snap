@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When I create the NotFound component should match snapshot 1`] = `
+<div class="not-found layout align-center wrap-column justify-center">
+  <h2>OOPS...</h2>
+  <h1>404</h1>
+  <p>Error</p>
+  <p>Sorry, the page you are looking for could not be found</p>
+</div>
+`;

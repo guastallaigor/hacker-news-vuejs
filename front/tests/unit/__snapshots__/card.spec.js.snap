@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When I create the Card component should match snapshot 1`] = `
+<div class="card less-padding" style="background-image: url(https://www.gravatar.com/avatar?s=15);">
+  <h1 class="text-shadow">Card title</h1> Card
+</div>
+`;
