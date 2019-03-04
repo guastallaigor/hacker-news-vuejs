@@ -181,3 +181,7 @@ Em caso de problemas, no arquivo `vue.config.js` comente o `proxy` atual e desco
 Para realizar a build do front-end local, execute o comando na raíz do projeto: `docker-compose run vue /bin/sh -c "cd front && npm run build"`
 
 Ou apenas `npm run build` dentro da pasta front
+
+## Iniciar o projeto após realizado todos os procedimentos anteriores
+
+Execute o comando `docker-compose up` na raíz do projeto
