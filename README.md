@@ -168,7 +168,7 @@ Este projeto contém testes E2E (end-to-end) com o [Cypress](https://www.cypress
 
 Recomendado realizar um `docker-compose down` antes, e subir apenas o serviço php: `docker-compose up php`
 
-Execute o comando `npm run test:e2e`
+Execute o comando `npm run test:e2e` em outra aba de seu terminal
 
 Será aberto a janela do Cypress, assim basta clicar no teste que deseja executar
 
