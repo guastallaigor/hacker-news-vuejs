@@ -7,7 +7,7 @@
   Hacker News Vue.js é um projeto de teste, onde o back-end em Laravel realiza a integração com a API do Hacker News, que por sua vez é consumida com o front-end realizado em Vue.js.
 </p>
 
-## Funcionalidades
+## Dependências
 
 ### Front-end
 
