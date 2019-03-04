@@ -26,14 +26,6 @@ describe('When I create the RotateSquare2 component', () => {
     expect(rotate.attributes().style).toBe('width: 88px; height: 88px; background: rgb(255, 255, 255);')
   })
 
-  it(`should change the background if the background prop is added`, () => {
-    const wrapper = createRotateSquareWrapper({ background: '#000' })
-    const rotate = wrapper.find('.spinner.spinner--rotate-square-2')
-    expect(wrapper.exists()).toBe(true)
-    expect(rotate.exists()).toBe(true)
-    expect(rotate.attributes().style).toBe('width: 60px; height: 60px; background: rgb(0, 0, 0);')
-  })
-
   it('should match snapshot', () => {
     const wrapper = createRotateSquareWrapper()
 

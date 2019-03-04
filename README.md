@@ -40,9 +40,18 @@ Todo o front-end está na pasta `front`
 
 Deve ser criado um `.env.js` a partir do `.env.example.js` que está na raíz da pasta
 
-Se você **não possui** `Node v8.11.0+` instalado em sua máquina, execute os comandos abaixo:
+---------------------------------------------------------------------------------------
+
+Se você **possui** `Node v8.11.0+` instalado em sua máquina, execute os comandos abaixo (recomendado):
+
+Dentro da pasta front (`cd front`) execute `npm install`
 
 ---------------------------------------------------------------------------------------
+
+Se você **não possui** `Node v8.11.0+` instalado em sua máquina, execute os comandos abaixo (não recomendado):
+
+---------------------------------------------------------------------------------------
+
 Execute `docker-compose up -d` para subir os containers (`php/vue`)
 
 Execute `docker-compose exec vue /bin/sh` para entrar dentro do container do front-end
@@ -51,17 +60,15 @@ Dentro da pasta front (`cd front`) execute `npm install`
 
 Para sair do container execute `exit`
 
+---------------------------------------------------------------------------------------
+
 Execute `docker-compose down && docker-compose up -d` para reiniciar o servidor
 
----------------------------------------------------------------------------------------
-
-Se você **possui** `Node v8.11.0+` instalado em sua máquina, execute os comandos abaixo:
-
-Dentro da pasta front (`cd front`) execute `npm install`
-
----------------------------------------------------------------------------------------
-
 Por padrão o front-end é executado na porta `8080`
+
+Em caso de problemas com o `SASS`, execute o comando dentro da pasta front: `npm rebuild node-sass`
+
+Ou dentro do container `docker-compose exec vue /bin/sh && cd front && npm rebuild node-sass`
 
 #### Back-end
 
@@ -71,7 +78,15 @@ Deve ser criado um `.env` a partir do `.env.example` na raíz da pasta
 
 Execute o comando `php artisan key:generate` para setar no `.env` a `APP_KEY`
 
-Se você **não possui** `Composer` instalado em sua máquina, execute os comandos abaixo:
+---------------------------------------------------------------------------------------
+
+Se você não **possui** `Composer` instalado em sua máquina, execute os comandos abaixo (recomendado):
+
+Dentro da pasta api (`cd api`) execute `composer install`
+
+---------------------------------------------------------------------------------------
+
+Se você **não possui** `Composer` instalado em sua máquina, execute os comandos abaixo (não recomendado):
 
 ---------------------------------------------------------------------------------------
 
@@ -84,12 +99,6 @@ Execute `composer install`
 Para sair do container execute `exit`
 
 Execute `docker-compose down && docker-compose up -d` para reiniciar o servidor
-
----------------------------------------------------------------------------------------
-
-Se você não **possui** `Composer` instalado em sua máquina, execute os comandos abaixo:
-
-Dentro da pasta api (`cd api`) execute `composer install`
 
 ---------------------------------------------------------------------------------------
 
@@ -112,7 +121,7 @@ Rota | Descrição
 /best-stories | Best Stories do Hacker News
 /new-stories | New Stories do Hacker News
 /user/:id | Informações de um usuário do Hacker News (ao clicar sobre um nome do usuário dentro de um card)
-"*" | Página não encontrada
+/* | Página não encontrada
 
 ### Back-end
 
@@ -155,12 +164,20 @@ No momento, os testes cobrem todos os componentes da pasta `src/components`
 
 #### Cypress (E2E)
 
-Este projeto contém testes E2E (end-to-end) com o [Cypress](https://www.cypress.io/). Execute o comando `npm run test:e2e`
+Este projeto contém testes E2E (end-to-end) com o [Cypress](https://www.cypress.io/).
+
+Recomendado realizar um `docker-compose down` antes, e subir apenas o serviço php: `docker-compose up php`
+
+Execute o comando `npm run test:e2e`
 
 Será aberto a janela do Cypress, assim basta clicar no teste que deseja executar
 
-## Deploy
+Em caso de problemas, no arquivo `vue.config.js` comente o `proxy` atual e descomente o que estiver comentado.
+
+## Production
 
 ### Front-end
 
 Para realizar a build do front-end local, execute o comando na raíz do projeto: `docker-compose run vue /bin/sh -c "cd front && npm run build"`
+
+Ou apenas `npm run build` dentro da pasta front

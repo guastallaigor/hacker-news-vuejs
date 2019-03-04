@@ -7,17 +7,13 @@ export default {
   props: {
     size: {
       default: '60px'
-    },
-    background: {
-      default: '#fff'
     }
   },
   computed: {
     styles () {
       return {
         width: this.size,
-        height: this.size,
-        background: this.background
+        height: this.size
       }
     }
   }
